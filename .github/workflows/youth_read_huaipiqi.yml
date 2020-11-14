@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-      YOUTH_READ0: ${{ secrets.YOUTH_READ0 }}
-      YOUTH_READ1: ${{ secrets.YOUTH_READ1 }}
-      YOUTH_READ2: ${{ secrets.YOUTH_READ2 }}
-      YOUTH_READ3: ${{ secrets.YOUTH_READ3 }}
-      YOUTH_READ4: ${{ secrets.YOUTH_READ4 }}
-      YOUTH_READ5: ${{ secrets.YOUTH_READ5 }}
+      YOUTH_READ_huaipiqi: ${{ secrets.YOUTH_READ_huaipiqi }}
+      YOUTH_READ_huaipiqi1: ${{ secrets.YOUTH_READ_huaipiqi1 }}
+      YOUTH_READ_huaipiqi2: ${{ secrets.YOUTH_READ_huaipiqi2 }}
+      YOUTH_READ_huaipiqi3: ${{ secrets.YOUTH_READ_huaipiqi3 }}
+      YOUTH_READ_huaipiqi4: ${{ secrets.YOUTH_READ_huaipiqi4 }}
+      YOUTH_READ_huaipiqi5: ${{ secrets.YOUTH_READ_huaipiqi5 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
@@ -52,22 +52,22 @@ jobs:
           YOUTH_READ: ${{ secrets.YOUTH_READ_huaipiqi2 }}
           
       - name: '运行 【中青看点自动阅读三】'
-        if: env.YOUTH_READ3
+        if: env.YOUTH_READ_huaipiqi3
         run: |
           node Task/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ3 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_huaipiqi3 }}
           
       - name: '运行 【中青看点自动阅读四】'
-        if: env.YOUTH_READ4
+        if: env.YOUTH_READ_huaipiqi4
         run: |
           node Task/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ4 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_huaipiqi4 }}
 
       - name: '运行 【中青看点自动阅读五】'
-        if: env.YOUTH_READ5
+        if: env.YOUTH_READ_huaipiqi5
         run: |
           node Task/Youth_Read.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ5 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_huaipiqi5 }}
